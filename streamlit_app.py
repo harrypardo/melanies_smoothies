@@ -11,7 +11,9 @@ st.write("Choose the fruits you want in your custom Smoothie!")
 
 
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-st.text(smoothiefroot_response.json())
+#st.text(smoothiefroot_response.json())
+sf_df = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+
 
 name_on_order = st.text_input("Name on Smoothie:")
 st.write("Name on Smoothie will be:", name_on_order)
